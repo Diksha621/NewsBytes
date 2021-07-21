@@ -41,6 +41,7 @@
                         <th>ID</th>
                         <th>Hash Link</th>
                         <th>Original Url</th>
+                        <th>User Ip</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,7 @@
                                 <td>{{ $row->id }}</td>
                                 <td><a href="{{ route('hash.link', $row->hash) }}" target="_blank">{{ route('hash.link', $row->hash) }}</a></td>
                                 <td>{{ $row->link }}</td>
+                                <td>{{ $row->ip_address }}</td>
                             </tr>
                         @endforeach
                     @endif

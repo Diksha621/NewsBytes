@@ -36,9 +36,11 @@ class UrlHashController extends Controller
     public function displayLink($hash)
     {
         $value = UrlHash::where('hash', $hash)->first();
-        if (Carbon::now()->greaterThan($value->created_at->addMinutes(5))) {
+        if (Carbon::now()->greaterThan($value->created_at->addDays(5))) {
             return view('error');
         }else{
+            $value->ip_address = \Request::ip();
+            $value->save();
             return redirect($value->link);
         }
         

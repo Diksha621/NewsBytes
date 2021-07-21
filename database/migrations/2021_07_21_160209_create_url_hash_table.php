@@ -17,6 +17,7 @@ class CreateUrlHashTable extends Migration
             $table->bigIncrements('id');
             $table->string('hash');
             $table->string('link', 1000);
+            $table->string('ip_address', 45)->nullable();
             $table->timestamps();
         });
     }
