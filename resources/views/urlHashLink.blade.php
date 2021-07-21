@@ -10,18 +10,18 @@
     <h1>News Bytes Url Hash</h1>
    
     <div class="card">
-      <div class="card-header">
-        <form method="POST" action="{{ route('create.hash.link') }}">
-            @csrf
-            <div class="input-group mb-3">
-              <input type="text" name="link" class="form-control" placeholder="Enter URL">
-              <div class="input-group-append">
-                <button class="btn btn-success" type="submit">Generate Hash Link</button>
-              </div>
-            </div>
-        </form>
-      </div>
-      <div class="card-body">
+        <div class="card-header">
+            <form method="POST" action="{{ route('create.hash.link') }}">
+                @csrf
+                <div class="input-group mb-3">
+                  <input type="text" name="link" class="form-control" placeholder="Enter URL">
+                  <div class="input-group-append">
+                    <button class="btn btn-success" type="submit">Generate Hash Link</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-body">
    
             @if (Session::has('success'))
                 <div class="alert alert-success">
@@ -55,7 +55,7 @@
                     @endif
                 </tbody>
             </table>
-      </div>
+        </div>
     </div>
    
 </div>

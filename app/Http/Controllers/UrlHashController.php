@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\UrlHash;
+use Carbon\Carbon;
 
 class UrlHashController extends Controller
 {
@@ -35,7 +36,11 @@ class UrlHashController extends Controller
     public function displayLink($hash)
     {
         $value = UrlHash::where('hash', $hash)->first();
-        return redirect($value->link);
+        if (Carbon::now()->greaterThan($value->created_at->addMinutes(5))) {
+            return view('error');
+        }else{
+            return redirect($value->link);
+        }
         
     }
 }
