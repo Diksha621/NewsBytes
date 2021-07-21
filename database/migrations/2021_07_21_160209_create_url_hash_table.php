@@ -16,7 +16,7 @@ class CreateUrlHashTable extends Migration
         Schema::create('url_hashes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('hash');
-            $table->string('link');
+            $table->string('link', 1000);
             $table->timestamps();
         });
     }

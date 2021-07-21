@@ -8,12 +8,14 @@ use App\Models\UrlHash;
 
 class UrlHashController extends Controller
 {
+    //this is to take input 
     public function index()
     {  
         $links = UrlHash::latest()->get();
         return view('urlHashLink', compact("links"));
     }
 
+    //this is to store url in database
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(), ['link' => 'required|url']);
