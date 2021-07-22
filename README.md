@@ -4,6 +4,7 @@
 - on clicking shorten urls must redirect to the same link
 - short url must have some expiration time
 - everytime hash should generate a different url
+- need to keep track of hits
 
 ## what I did
 
@@ -12,3 +13,5 @@
 - I mapped short url to the actual url but this process is on the fly when used click on short url it will be redireced to original url
 
 - If url got expired then it will be redirected to error page which displays url expired
+
+- I used Mysql by assuming current storage required is less for large storage we can use nosql and to avoid collision of urls zookeeper will work
